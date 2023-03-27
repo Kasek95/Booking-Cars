@@ -1,0 +1,12 @@
+import {createClient} from "@supabase/supabase-js";
+
+//Password to Api 67AZ1uxl4sus3c4f
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzamluaHluZW1zbWVycmJremV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk3NTc5NTYsImV4cCI6MTk5NTMzMzk1Nn0.DeLdoujYWMjSr9LoHLF2zlb1JPB58dTbApxYSlKGZTc
+//https://asjinhynemsmerrbkzeu.supabase.co
+
+const supabase = createClient(
+  "https://asjinhynemsmerrbkzeu.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzamluaHluZW1zbWVycmJremV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk3NTc5NTYsImV4cCI6MTk5NTMzMzk1Nn0.DeLdoujYWMjSr9LoHLF2zlb1JPB58dTbApxYSlKGZTc"
+);
+
+export default supabase;

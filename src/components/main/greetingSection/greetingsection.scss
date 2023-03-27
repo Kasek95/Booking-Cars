@@ -1,0 +1,76 @@
+@import "../../scss/colors";
+@import "../../scss/base";
+
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../Assets/mclaren-p1-7746386_1920.jpg" );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .greetingSection {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+        .banner-title {
+          font-size: 7rem;
+          font-weight: 800;
+          letter-spacing: 0;
+          color: $color-white;
+          text-shadow: 0px 3px 6px #00000040;
+          text-transform: uppercase;
+          z-index: 1;
+        }
+        .banner-text {
+          margin-bottom: 2rem;
+          font-size: 2rem;
+          font-weight: 700;
+          color: white;
+          z-index: 1;
+        }
+      .banner-buttons {
+        display: flex;
+        gap: 2rem;
+        z-index: 1;
+         .button {
+           display: inline-block;
+           border-radius: 40px;
+           font-size: 16px;
+           font-weight: 700;
+           text-transform: uppercase;
+           padding: 22px 55px;
+           text-decoration: none;
+         }
+        .button-red {
+          background-color: $primary-color;
+          color: $color-white;
+          box-shadow: 0px 3px 6px #FF00004D;
+          transition: background-color 0.3s, color 0.3s;
+        }
+        .button-red:hover {
+          color: $primary-color;
+          background-color: $color-white;
+        }
+        .button-white {
+          color: $primary-color;
+          background-color: $color-white;
+          transition: background-color 0.3s, color 0.3s;
+        }
+        .button-white:hover {
+          background-color: $primary-color;
+          color: $color-white;
+        }
+      }
+    }
+}

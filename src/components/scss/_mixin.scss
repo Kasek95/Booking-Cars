@@ -1,0 +1,101 @@
+@import "colors";
+@mixin borderAfter {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  border: 5px solid $primary-color;
+  width: 4rem;
+  border-radius: 5px;
+}
+
+@mixin aboutUsBox {
+  position: relative;
+  display: flex;
+  border: 1px solid $text-color;
+  height: 200px;
+  width: 300px;
+  border-radius: 2rem;
+  margin-bottom: 200px;
+}
+
+@mixin aboutUsBoxI {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  right: 20px;
+  top: 20px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+};
+@mixin aboutUsBoxP {
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  border-bottom-left-radius: 31px;
+  border-bottom-right-radius: 31px;
+  padding: 20px 0;
+  width: 100%;
+  font-weight: 700;
+  color: $color-white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@mixin first_box_before {
+  content: "";
+  position: absolute;
+  top:50%;
+  right: -51px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $primary-color;
+}
+
+@mixin boxInfoAboutUs {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: -180px;
+  width: 400px;
+  height: 160px;
+  border: 2px solid lightgrey;
+  border-radius: 20px;
+  background-color: lightgrey;
+}
+
+@mixin boXInfoAboutUsBefore {
+  content: "";
+  position: absolute;
+  top: -11px;
+  right: 30px;
+  height: 20px;
+  width: 20px;
+  border: 2px solid lightgrey;
+  background-color: lightgrey;
+  transform: rotate(45deg);
+}
+
+@mixin secondBoxAboutUsInfo {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 160px;
+  border: 2px solid lightgrey;
+  border-radius: 20px;
+  background-color: lightgrey;
+  top: -185px;
+}
+
+@mixin secondBoxAboutUsInfoBefore {
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  right: 120px;
+  height: 20px;
+  width: 20px;
+  border: 2px solid lightgrey;
+  background-color: lightgrey;
+  transform: rotate(45deg)
+}

@@ -1,0 +1,142 @@
+@import "../../scss/colors";
+@import "../../scss/base";
+.concat {
+
+    .tittle-container {
+     display: flex;
+     justify-content: center;
+      margin-top: 100px;
+      margin-bottom: 60px;
+       h2 {
+         position: relative;
+         text-transform: uppercase;
+         font-size: 2rem;
+
+       }
+       h2::before {
+         content: '';
+         position: absolute;
+         top: 16px;
+         right: -73px;
+         width: 4rem;
+         border: 5px solid $primary-color;
+         border-radius: 10px;
+         background-color: $primary-color;
+       }
+       h2::after {
+         content: '';
+         position: absolute;
+         top: 16px;
+         left: -73px;
+         width: 4rem;
+         border: 5px solid $primary-color;
+         border-radius: 10px;
+       }
+   }
+
+     .contact-wrapper  {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 100px;
+
+       @media  (max-width: 1200px) {
+            display: block;
+       }
+
+
+          .google-maps {
+
+            iframe {
+              height: 500px;
+              width: 500px;
+              margin-right: 20px;
+
+
+            }
+          }
+
+          .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 444px;
+            align-items: flex-start;
+
+
+            .contact-form-input {
+              background-color: $color-white;
+              outline: none;
+              font-size: 16px;
+              line-height: 22px;
+              color: $contact-text;
+              width: 100%;
+              font-weight: 400;
+              border-radius: 8px;
+              border: 1px solid #D1D1D1;
+              font-family: "Nunito Sans", sans-serif;
+              margin-bottom: 20px;
+              padding: 8px 12px;
+            }
+            .contact-form-input:focus {
+              border: 1px solid #FF0000;
+              box-shadow: 0 1px 6px #FF00004D;
+            }
+            .contact-form-input::placeholder {
+              color: $contact-text;
+            }
+
+            .contact-form-message {
+              height: 140px;
+            }
+            .contact-form-checkbox-label {
+              margin-bottom: 20px;
+
+              display: flex;
+            }
+
+            .contact-form-checkbox {
+              width: 0;
+              height: 0;
+            }
+            .contact-form-checkbox::after {
+              content: "";
+              width: 22px;
+              height: 22px;
+              display: block;
+              border: 1px solid #D1D1D1;
+              border-radius: 8px;
+            }
+            .contact-form-checkbox:checked:after {
+              background-image: url('../../Assets/check.png');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 13px;
+            }
+            .contact-form-checkbox-label-text {
+              font-weight: 300;
+              font-size: 1rem;
+              line-height: 14px;
+              font-family: "Open Sans", sans-serif;
+              color: var(--contact-text);
+              margin-left: 30px;
+            }
+            .contact-form-button {
+              align-self: flex-end;
+              text-transform: uppercase;
+              background-color: $color-white;
+              font-weight: bold;
+              color: $primary-color;
+              padding: 11px 52px;
+              border-radius: 15px;
+              border: 1px solid rgba(255, 0, 0, 1);
+              box-shadow: 0px 3px 6px #FF00004D;
+            }
+
+
+
+          }
+
+     }
+
+
+
+}

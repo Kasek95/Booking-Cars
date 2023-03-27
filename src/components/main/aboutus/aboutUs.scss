@@ -1,0 +1,226 @@
+@import "../../scss/colors";
+@import "../../scss/base";
+@import "../../scss/mixin";
+
+.about_us {
+  .heading-about-us {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    h2 {
+      position: relative;
+      margin-top: 3rem;
+      margin-bottom: 100px;
+      font-size: 3rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    h2::before {
+      position: absolute;
+      content: "";
+      top: 30px;
+      left: -73px;
+      border: 5px solid $primary-color;
+      width: 4rem;
+      border-radius: 5px;
+    }
+
+    h2::after {
+      position: absolute;
+      content: "";
+      top: 30px;
+      right: -73px;
+      border: 5px solid $primary-color;
+      width: 4rem;
+      border-radius: 5px;
+
+    }
+  }
+
+
+  .about_us_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+
+
+    .about_box_first {
+      margin-right: 2rem;
+
+      .wedding {
+        background-image: url("../../Assets/weding.jpg");
+        background-size: cover;
+        background-position: center;
+        @include aboutUsBox;
+
+        .wedding_p {
+          @include aboutUsBoxP;
+        }
+
+        .wedding_info {
+          @include boxInfoAboutUs;
+          margin-top: 1rem;
+          flex-direction: column;
+          text-align: center;
+
+          p {
+            margin-top: 2rem;
+          }
+        }
+
+        .wedding_info::before {
+          @include boXInfoAboutUsBefore;
+        }
+
+        i {
+          color: $color-white;
+          @include aboutUsBoxI;
+        }
+
+        .show {
+          display: block;
+        }
+      }
+
+      .wedding::before {
+        @include first_box_before;
+      }
+
+      .party {
+        background-image: url("../../Assets/stretch-limousine-4593863_1920.jpg");
+        background-position: center;
+        background-size: cover;
+        @include aboutUsBox;
+
+        .party_paragraf {
+          @include aboutUsBoxP;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .wedding_party {
+          @include boxInfoAboutUs;
+          flex-direction: column;
+          text-align: center;
+
+          p {
+            margin-top: 2rem;
+          }
+
+        }
+
+        .wedding_party::before {
+          @include boXInfoAboutUsBefore;
+          display: block;
+        }
+
+        .party-info {
+          color: $color-white;
+          @include aboutUsBoxI;
+        }
+
+        .showParty {
+          display: block;
+        }
+      }
+
+      .party::before {
+        @include first_box_before;
+      }
+
+    }
+
+    .border_middle {
+      border: 2px solid $primary-color;
+      width: 5px;
+      background-color: $primary-color;
+      border-radius: 5px;
+    }
+
+    .about_box_second {
+      margin-left: 2rem;
+
+      .earn {
+        background-image: url("../../Assets/woman-3261425_1280.jpg");
+        background-position: center;
+        background-size: cover;
+        margin-top: 200px;
+        @include aboutUsBox;
+
+        .earn-paragraf {
+          @include aboutUsBoxP;
+        }
+
+        .earn-info {
+          @include secondBoxAboutUsInfo;
+
+          .earn-p {
+            margin-top: 2rem;
+            text-align: center;
+          }
+
+
+        }
+
+        .earn-info::before {
+          @include secondBoxAboutUsInfoBefore;
+        }
+
+        i {
+          color: white;
+          @include aboutUsBoxI;
+        }
+
+        .showEarn {
+          display: flex;
+        }
+      }
+
+      .earn::before {
+        @include first_box_before;
+        left: -51px;
+      }
+
+      .rent {
+        @include aboutUsBox;
+        background-image: url("../../Assets/auto-2179220_1280.jpg");
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0;
+
+        .rent_paragraf {
+          @include aboutUsBoxP;
+        }
+
+        .rentInfo {
+          @include secondBoxAboutUsInfo;
+          align-items: center;
+          text-align: center;
+
+        }
+
+        .rentInfo::before {
+          @include secondBoxAboutUsInfoBefore;
+        }
+
+        i {
+          color: $color-white;
+          @include aboutUsBoxI;
+        }
+
+        .showRent {
+          display: flex;
+        }
+      }
+
+      .rent::before {
+        @include first_box_before;
+        left: -51px;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../scss/colors";
+@import "../../scss/base";
+
+.fleetContainer {
+
+  margin: 0 auto;
+  width: 100%;
+  min-height: 600px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .fleetCars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+
+    .car-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100%;
+      border: 1px solid black;
+      border-radius: 10px;
+
+      .carImg {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+
+        img {
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+
+      }
+
+      .carInfo {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .carPrize {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .contact {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .Booking-car {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: bold;
+        justify-content: center;
+        border: none;
+        width: 200px;
+        margin: 10px auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: $color-white;
+        background-color: lightgrey;
+
+      }
+    }
+  }
+
+}
+
+
+.slide {
+  width: 100%;
+  height: 530px;
+
+  .slick-track {
+    display: flex;
+    gap: 20px;
+  }
+
+  .slick-next {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+  }
+
+  .slick-prev {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+  }
+}
+
+
