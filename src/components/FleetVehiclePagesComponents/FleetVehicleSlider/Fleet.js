@@ -1,7 +1,10 @@
 import React from "react";
-import Slider from "react-slick";
-
 import "./fleet.scss";
+import Slider from "react-slick";
+import { DatePicker } from 'antd';
+const {RangePicker} = DatePicker
+
+
 
 const Fleet = (props) => {
   const vehicle = props.cars;
@@ -76,7 +79,9 @@ const Fleet = (props) => {
             <div className={"Book-Car-info"}></div>
             <div className={"Book-Car-price"}></div>
 
-            <section className={"calender"}></section>
+            <section className={"calender"}>
+              <RangePicker></RangePicker>
+            </section>
 
             <button type={"submit"}>Book</button>
           </section>
