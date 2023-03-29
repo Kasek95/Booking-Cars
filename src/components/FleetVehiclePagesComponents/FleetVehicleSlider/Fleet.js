@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
+import supabase from "../../../supabase";
 import "./fleet.scss";
 import Slider from "react-slick";
 import { DatePicker } from 'antd';
@@ -7,7 +8,40 @@ const {RangePicker} = DatePicker
 
 
 const Fleet = (props) => {
-  const vehicle = props.cars;
+    const vehicle = props.cars;
+    const [selectedCar, setSelectedCar] = useState(null)
+    const [startDate, setStartDate] = useState()
+    const [endDate, setEndDate] = useState()
+    const [activeReservations, setActiveReservations] = useState([]);
+
+
+
+
+
+const getReservations = async(carId)=> {
+    const { data } = await supabase.from("reservations").select().eq('carId',carId);
+    setActiveReservations(data);
+}
+
+const showBookingCar = async(id) => {
+        const car =vehicle.find(x => x.id === id)
+      setSelectedCar(car)
+      await getReservations(id)
+   }
+const handleDateChange = (date,dateString) => {
+       setStartDate(dateString[0])
+       setEndDate(dateString[1])
+   }
+const bookACar = async() => {
+
+       await supabase.from("reservations").insert({
+           startDate: startDate,
+           endDate: endDate,
+           carId: selectedCar.id
+       })
+
+       setSelectedCar(null)
+    }
 
   const settings = {
     className: "slide",
@@ -23,7 +57,7 @@ const Fleet = (props) => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -51,7 +85,7 @@ const Fleet = (props) => {
       <section className={"fleetCars"}>
         <Slider {...settings}>
           {vehicle.map((car, idx) => (
-            <div id={idx} className={"car-container"}>
+            <div id={car.id} className={"car-container"}>
               <div className={"carImg"}>
                 <img src={car.carimg} alt={"Car"} />
               </div>
@@ -65,30 +99,41 @@ const Fleet = (props) => {
               <span className={"contact"}>
                 <strong>Contact</strong>: {car.ownername}, {car.email}
               </span>
-              <button className={"Booking-car"}>Book a car</button>
+              <button onClick={() => showBookingCar(car.id)} className={"Booking-car"}>Book a car</button>
             </div>
           ))}
         </Slider>
 
         <section className={"Book-Car-Section"}>
-          <section className={"Book-Car-Box"}>
-            <div className={"Book-Car-heading"}>
-              <h3>Book Car</h3>
-            </div>
-            <div className={"Book-Car-img"}></div>
-            <div className={"Book-Car-info"}></div>
-            <div className={"Book-Car-price"}></div>
+          <div className={"Book-Car-heading"}>
+            <h3>Book Car</h3>
+          </div>
 
-            <section className={"calender"}>
-              <RangePicker></RangePicker>
+           <section key={selectedCar?.id} className={selectedCar ? "Book-Car-Box show" : "Book-Car-Box"}>
+              <i onClick={()=> setSelectedCar(null)} className="fa-solid fa-xmark"></i>
+              <div className={"Book-Car-img"}><img src={selectedCar?.carimg}/></div>
+              <div className={"Book-Car-info"}>{selectedCar?.carinfo} Production of the car is {selectedCar?.caryear}</div>
+              <div className={"Book-Car-price"}>Price per day: <strong>{selectedCar?.carprice}$</strong></div>
+              <div className={"concat"}>Email: {selectedCar?.email}</div>
+
+              <section className={"calender"}>
+                <RangePicker onChange={handleDateChange}
+                             disabledDate={(current) => {
+                                 const now = new Date(current).setHours(0,0,0,0)
+                                 const reservations = activeReservations.map(x => ({ start: new Date(x.startDate).setHours(0,0,0,0), end : new Date(x.endDate ).setHours(0,0,0,0)}))
+                                 return reservations.some(x => now >= x.start && now <= x.end);
+                             }} ></RangePicker>
+
+              </section>
+
+              <button onClick={bookACar}  className={"Book"} type={"submit"}>Book</button>
             </section>
 
-            <button type={"submit"}>Book</button>
-          </section>
         </section>
       </section>
     </section>
   );
 };
+
 
 export default Fleet;
