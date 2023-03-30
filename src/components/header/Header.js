@@ -10,20 +10,20 @@ function Header(props) {
         <Link className={"logo"} to={"/"}>
           Royal<span>Cars</span>
         </Link>
-        <navigation className={"navigation"}>
-          <Link className={"navLink"} to={"/"}>
+        <nav className={"navigation"}>
+          <a className={"navLink"} href={"#AboutUs"}>
             About Us
-          </Link>
+          </a>
           <Link className={"navLink"} to={"/Fleet"}>
             Fleet of Vehicles
           </Link>
           <Link className={"navLink"} to={"/AddVehicle"}>
             Add your Vehicle
           </Link>
-          <Link className={"navLink"} to={"/"}>
+          <a className={"navLink"} href={"#concat"}>
             Concat
-          </Link>
-        </navigation>
+          </a>
+        </nav>
       </div>
     </header>
   );

@@ -8,7 +8,6 @@ import "./opinion.scss";
 const Opinion = () => {
   const [isDisplay, setIsDisplay] = useState(false);
   const [opinions, setOpinions] = useState(opinion);
-  const [selectedFile, setSelectedFile] = useState(null);
   const [hide, setHide] = useState(false);
   const [data, setData] = useState({
     name: "",
