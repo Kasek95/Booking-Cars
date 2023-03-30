@@ -5,7 +5,7 @@ import "./concat.scss"
 const Concat = () => {
 
     return (
-        <section className={"concat container"} id={"concat"}>
+        <section className={"concat"} id={"concat"}>
 
             <div className={"tittle-container"}><h2>Concat</h2></div>
 

@@ -3,7 +3,10 @@
 
 .home {
   position: relative;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 700px;
   width: 100%;
   background-image: url("../../Assets/mclaren-p1-7746386_1920.jpg" );
   background-position: center;
@@ -41,6 +44,7 @@
         }
       .banner-buttons {
         display: flex;
+        margin-bottom: 50px;
         gap: 2rem;
         z-index: 1;
          .button {

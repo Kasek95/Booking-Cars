@@ -9,7 +9,7 @@ const AboutUs = () => {
 
   return (
     <section className={"about_us"} id={"AboutUs"}>
-      <article className={";"}>
+      <article className={""}>
         <div className={"heading-about-us"}>
           <h2>About Us</h2>
         </div>

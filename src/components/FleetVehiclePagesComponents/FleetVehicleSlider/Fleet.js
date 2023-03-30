@@ -122,7 +122,9 @@ const bookACar = async() => {
                                  const now = new Date(current).setHours(0,0,0,0)
                                  const reservations = activeReservations.map(x => ({ start: new Date(x.startDate).setHours(0,0,0,0), end : new Date(x.endDate ).setHours(0,0,0,0)}))
                                  return reservations.some(x => now >= x.start && now <= x.end);
-                             }} ></RangePicker>
+                             }}>
+
+                </RangePicker>
 
               </section>
 
