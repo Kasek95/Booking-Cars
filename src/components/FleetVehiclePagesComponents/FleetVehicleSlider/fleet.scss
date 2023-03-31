@@ -2,7 +2,7 @@
 @import "../../scss/base";
 
 .fleetContainer {
-
+  color: $color-white;
   margin: 0 auto;
   width: 100%;
   min-height: 600px;
@@ -67,6 +67,7 @@
         font-weight: bold;
         justify-content: center;
         border: none;
+        cursor: pointer;
         width: 200px;
         margin: 10px auto;
         padding: 10px 20px;
@@ -99,6 +100,8 @@
            align-items: center;
            flex-direction: column;
            border: 1px solid lemonchiffon;
+           border-top-left-radius: 20px;
+           border-top-right-radius: 20px;
            margin-bottom: 100px;
             i {
               position: absolute;
@@ -109,12 +112,14 @@
               align-items: center;
               font-size: 2rem;
               color: white;
+              cursor: pointer;
               border: 2px solid #4a5568;
               height: 40px;
               width: 40px;
               border-radius: 5px;
             }
             .Book-Car-img {
+
               height: 300px;
               width: 100%;
               padding-bottom: 10px;
@@ -123,6 +128,8 @@
                  height: 100%;
                  object-position: center;
                  object-fit: cover;
+                 border-top-left-radius: 20px;
+                 border-top-right-radius: 20px;
 
                }
             }
@@ -146,6 +153,7 @@
              margin-bottom: 50px;
            }
            .Book {
+             cursor: pointer;
              border: 1px solid grey;
              background: none;
              color: $color-white;
