@@ -1,3 +1,6 @@
+There is a car rental project, go add your opinion there, add a car and pre-order it. The project is made for computers only
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
